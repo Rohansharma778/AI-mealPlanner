@@ -128,22 +128,38 @@ END;
 $$ language 'plpgsql';
 
 --create triggers for updated at
+DROP TRIGGER IF EXISTS update_user_updated_at ON users;
+CREATE TRIGGER update_user_updated_at
+BEFORE UPDATE ON users
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_at_column();
 
-CREATE TRIGGER update_user_updated_at BEFORE UPDATE ON users
-    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+DROP TRIGGER IF EXISTS update_user_preference_updated_at ON user_preferences;
+CREATE TRIGGER update_user_preference_updated_at
+BEFORE UPDATE ON user_preferences
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_at_column();
 
-CREATE TRIGGER update_user_preference_updated_at BEFORE UPDATE ON user_preferences
-    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+DROP TRIGGER IF EXISTS update_pantry_items_updated_at ON pantry_items;
+CREATE TRIGGER update_pantry_items_updated_at
+BEFORE UPDATE ON pantry_items
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_at_column();
 
-CREATE TRIGGER update_pantry_items_updated_at BEFORE UPDATE ON pantry_items
-    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+DROP TRIGGER IF EXISTS update_recipes_updated_at ON recipes;
+CREATE TRIGGER update_recipes_updated_at
+BEFORE UPDATE ON recipes
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_at_column();
 
-CREATE TRIGGER update_recipes_updated_at BEFORE UPDATE ON recipes
-    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+DROP TRIGGER IF EXISTS update_meal_plan_updated_at ON meal_plans;
+CREATE TRIGGER update_meal_plan_updated_at
+BEFORE UPDATE ON meal_plans
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_at_column();
 
-CREATE TRIGGER update_meal_plan_updated_at BEFORE UPDATE ON meal_plans
-    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
-
-CREATE TRIGGER update_shopping_list_items_updated_at BEFORE UPDATE ON shopping_list_items
-    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
-
+DROP TRIGGER IF EXISTS update_shopping_list_items_updated_at ON shopping_list_items;
+CREATE TRIGGER update_shopping_list_items_updated_at
+BEFORE UPDATE ON shopping_list_items
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_at_column();
