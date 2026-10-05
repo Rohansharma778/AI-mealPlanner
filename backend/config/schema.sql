@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS users(
 -- USER PREFERENCES TABLE
 CREATE TABLE IF NOT EXISTS user_preferences(
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+    user_id UUID UNIQUE REFERENCES users(id) ON DELETE CASCADE,
     dietary_restrictions TEXT[] DEFAULT '{}',
     allergies TEXT[] DEFAULT '{}',
     preferred_cuisines TEXT[] DEFAULT '{}',
