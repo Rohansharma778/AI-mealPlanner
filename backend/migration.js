@@ -11,13 +11,22 @@ const __dirname =path.dirname(__filename)
 
 dotenv.config();
 
-const pool = new Pool({
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT || 8000,
-    host: process.env.DB_HOST
-});
+const pool = new Pool(
+  process.env.NODE_ENV === "production"
+    ? {
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      }
+    : {
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        port: process.env.DB_PORT || 5432,
+        host: process.env.DB_HOST,
+      }
+);
 
 
 async function runMigration(){
