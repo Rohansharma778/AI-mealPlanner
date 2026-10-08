@@ -2,39 +2,6 @@
 An AI-powered full-stack meal planning application that generates personalized recipes and meal suggestions based on your pantry, dietary preferences, allergies, and health constraints.
 
 
-Architecture:
-                    ┌─────────────────────┐
-                    │    React Frontend   │
-                    │                     │
-                    │  Meal Planner UI    │
-                    │  Pantry Management  │
-                    │  Recipes            │
-                    │  Shopping Lists     │
-                    └──────────┬──────────┘
-                               │
-                               │ REST API
-                               ▼
-                    ┌─────────────────────┐
-                    │ Node.js + Express   │
-                    │                     │
-                    │ Authentication      │
-                    │ Business Logic      │
-                    │ API Routes          │
-                    └──────────┬──────────┘
-                               │
-                  ┌────────────┴────────────┐
-                  │                         │
-                  ▼                         ▼
-        ┌──────────────────┐      ┌──────────────────┐
-        │   PostgreSQL     │      │   Gemini API     │
-        │                  │      │                  │
-        │ Users            │      │ Recipe           │
-        │ Pantry           │      │ Generation       │
-        │ Meals            │      │ AI Suggestions   │
-        │ Recipes          │      │                  │
-        └──────────────────┘      └──────────────────┘
-
-
 🛠️ Tech Stack
 Frontend
 React
