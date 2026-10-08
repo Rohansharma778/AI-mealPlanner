@@ -6,8 +6,8 @@ An AI-powered full-stack web app that turns the ingredients in your pantry into 
 
 Try the live app without signing up:
 
-- **Email:** demo@example.com
-- **Password:** Demo@1234
+- **Email:** rohan@gmail.com
+- **Password:** rohan77
 
 ## ✨ Features
 
