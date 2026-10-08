@@ -2,6 +2,13 @@
 
 An AI-powered full-stack web app that turns the ingredients in your pantry into personalized recipes, tailored to your dietary preferences, allergies, and health constraints.
 
+## 🔑 Demo Account
+
+Try the live app without signing up:
+
+- **Email:** demo@example.com
+- **Password:** Demo@1234
+
 ## ✨ Features
 
 - 🥕 **Pantry-based recipes** – enter what you have, get dishes you can actually cook
